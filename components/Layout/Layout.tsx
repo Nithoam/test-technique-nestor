@@ -27,10 +27,9 @@ const Layout: React.VFC<any> = ({ children }) => {
         {children}
       </main>
       <footer className="relative bottom-0 flex w-full flex-col items-center justify-center space-y-4 border-t border-white bg-nightBlue p-4 text-white">
-        <div>&copy; Nicolas Garilliere</div>
         <p className="text-center">
           {
-            "Site réalisé dans l'exercice d'un entretien technique pour la société \"Chez Nestor\""
+            "Site réalisé par Nicolas Garilliere dans l'exercice d'un entretien technique pour la société \"Chez Nestor\""
           }
         </p>
       </footer>
