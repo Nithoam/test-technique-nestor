@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Appartement 1",
+    "description": "Un bel appartement avec vue sur la mer",
+    "price": 270000,
+    "surface": 44,
+    "picture": "https://media.istockphoto.com/id/1403350043/fr/photo/point-de-vue-de-lh%C3%A9licopt%C3%A8re-%C3%A0-hong-kong-avec-de-nombreux-d%C3%A9tails-visibles-sur-limage.jpg?s=612x612&w=is&k=20&c=l-VsMD8a3Lmb_4SgpitNsawSlqTYhok50cYcBITd-ME="
+  },
+  {
+    "id": 2,
+    "name": "Appartement 2",
+    "description": "Un bel appartement en plein Paris",
+    "price": 219000,
+    "surface": 50,
+    "picture": "https://cdn.pixabay.com/photo/2016/11/18/17/20/living-room-1835923_960_720.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Appartement 3",
+    "description": "Un bel appartement à 100m des pistes de ski",
+    "price": 250000,
+    "surface": 75,
+    "picture": "https://media.istockphoto.com/id/1357529194/fr/photo/rendu-3d-dun-salon-de-style-moderne-avec-chemin%C3%A9e.jpg?s=612x612&w=is&k=20&c=jdbdEDGWCcqm1VF_DcsaLCgoGcLGwA_OkAwpCa_Byrw="
+  },
+  {
+    "id": 4,
+    "name": "Appartement 4",
+    "description": "Un bel appartement proche des commerces",
+    "price": 150000,
+    "surface": 72,
+    "picture": "https://media.istockphoto.com/id/1267663850/fr/photo/int%C3%A9rieur-noir-avec-canap%C3%A9-plantes-et-table-basse-3d-rendre-illustration-maquette.jpg?s=612x612&w=is&k=20&c=-6mGhXKZqtroHqT3H5pIfMyNFFzXJTFrTLFamyPxTtI="
+  },
+  {
+    "id": 5,
+    "name": "Appartement 5",
+    "description": "Un bel appartement tout court",
+    "price": 120000,
+    "surface": 82,
+    "picture": "https://media.istockphoto.com/id/1366921254/fr/photo/design-dint%C3%A9rieur-de-salon-color%C3%A9-concept-dint%C3%A9rieur-de-memphis-design-rendu-3d.jpg?s=612x612&w=is&k=20&c=XR-P7baaWUp4qXUL5f9zAW5j2UC7Zqg1Fd5ja83bL2k="
+  }
+]
