@@ -5,10 +5,12 @@ import { Params } from "next/dist/server/router";
 import data from "../../data.json";
 import { dataAppartementProps } from "utils/interfaceProps";
 import Layout from "components/Layout";
+import { NumericFormat } from "react-number-format";
+
 export const getStaticPaths = async () => {
   const appartementsData: dataAppartementProps[] = data;
-  console.log("appartementsData", appartementsData);
-  const paths = appartementsData?.map((path: any) => ({
+
+  const paths = appartementsData?.map((path: { id: number }) => ({
     params: {
       id: `${path.id}`,
     },
@@ -32,7 +34,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 const Article: NextPage<{
   appartementData: dataAppartementProps;
 }> = ({ appartementData }) => {
-  console.log("appartementData", appartementData);
   return (
     <>
       <Head>
@@ -41,10 +42,11 @@ const Article: NextPage<{
       <Layout>
         <div className="m-auto my-4 w-large">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-black my-2 text-center text-xl font-bold leading-tight tracking-tight md:text-4xl">
-              Retrouver {appartementData.name} dans notre agence
+            <h1 className="text-black my-4 text-center text-2xl font-bold leading-tight tracking-tight md:text-4xl">
+              Retrouver <span className="surligne">{appartementData.name}</span>{" "}
+              dans notre agence
             </h1>
-            <div className="z-10 mt-2 grid h-80 w-full  sm:h-[50vh] md:px-0 lg:w-2/3">
+            <div className="z-10 my-4 grid h-80 w-full  sm:h-[50vh] md:px-0 lg:w-2/3">
               <div className="grid-area-1-1 relative h-full w-full overflow-hidden rounded-lg">
                 <Image
                   src={`${appartementData.picture}`}
@@ -58,13 +60,27 @@ const Article: NextPage<{
               </div>
             </div>
           </div>
-          <div className="mt-4 flex flex-col gap-2">
-            <h2 className="text-black text-xl font-bold leading-tight tracking-tight md:text-4xl">
+          <div className="mx-auto flex flex-col gap-2 lg:w-2/3">
+            <h2 className="text-black text-2xl font-bold leading-tight tracking-tight md:text-4xl">
               {appartementData.name}
             </h2>
             <div>{appartementData.description}</div>
             <div>{appartementData.surface} m²</div>
-            <div className="text-black italic">{appartementData.price} €</div>
+            <div className="block font-bold md:text-2xl">
+              {appartementData.price} €
+            </div>
+            {appartementData.adress && (
+              <div className="sticky top-0 mx-2 h-96 w-full space-y-8 p-2 py-4 ">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  allowFullScreen
+                  className="rounded"
+                  src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_API_KEY}&q=${appartementData?.adress}`}
+                ></iframe>
+              </div>
+            )}
           </div>
         </div>
       </Layout>

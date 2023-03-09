@@ -1,3 +1,6 @@
+export interface StateProps {
+  isDarkMode: boolean;
+}
 export interface dataAppartementProps {
   id: number;
   name: string;
@@ -5,4 +8,5 @@ export interface dataAppartementProps {
   price: number;
   picture: string;
   surface: number;
+  adress: string;
 }

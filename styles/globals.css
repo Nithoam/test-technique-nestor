@@ -26,3 +26,21 @@ body {
   scroll-behavior: smooth;
   background-color: #f8f9fa;
 }
+
+.surligne {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.surligne::before {
+  content: "";
+  position: absolute;
+  width: 101%;
+  height: 25%;
+  left: -2px;
+  bottom: 0;
+  transform: rotate(-1deg);
+  z-index: -1;
+  background-color: #f4ab03;
+}

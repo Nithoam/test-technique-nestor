@@ -26,7 +26,7 @@ module.exports = {
         full: "100%",
       },
       width: {
-        large: "85vw",
+        large: "90vw",
       },
     },
   },

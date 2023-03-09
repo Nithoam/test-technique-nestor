@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import { NumericFormat } from "react-number-format";
 export interface AppartementCardProps {
   price: number;
   title: string;
@@ -23,24 +23,26 @@ const AppartementCard: React.VFC<AppartementCardProps> = ({
     <Link href={`/appartement/${id}`}>
       <a className="">
         <div
-          className={`duration-250 relative grid transform grid-rows-2 overflow-hidden rounded-lg bg-white shadow transition-all ease-out hover:scale-105 hover:shadow-md lg:grid-cols-2/3 lg:grid-rows-1`}
+          className={`duration-250 relative grid transform grid-rows-2 overflow-hidden rounded-lg bg-white shadow-md transition-all ease-out hover:scale-105 hover:shadow-md lg:grid-cols-2/3 lg:grid-rows-1`}
         >
-          <div className="text-nightBlue order-2 flex flex-col justify-center gap-y-2 px-4 lg:order-first">
+          <div className="order-2 flex flex-col justify-center gap-y-2 px-4 text-nightBlue lg:order-first lg:px-12">
             <h2 className="text-xl font-bold leading-tight tracking-tight md:text-3xl">
               {title}
             </h2>
             <div>{description}</div>
             <div className="md:text-xl">{surface} m²</div>
-            <div className="">
-              <div className="text-nightBlue font-bold md:text-2xl">{price} €</div>
+            <div className="flex">
+              <div className="block font-bold md:text-2xl">
+                <NumericFormat value={price} thousandSeparator=" " suffix="€" />
+              </div>
             </div>
             <div className="text-black font-bold">
               En savoir plus{" "}
               <span className="text-orange font-bold">&#62;</span>
             </div>
           </div>
-          <div className="z-10 grid h-72 w-full md:px-0">
-            <div className="grid-area-1-1 relative order-first h-full w-full overflow-hidden rounded-t-lg">
+          <div className=" grid h-72 w-full">
+            <div className="grid-area-1-1 relative order-first h-full w-full overflow-hidden lg:rounded-r-lg">
               <Image
                 src={picture}
                 alt=""
